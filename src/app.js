@@ -1,6 +1,7 @@
 require('dotenv').config()
 var express=require("express");
 var app=express();
+var PORT=process.env.PORT || 6000;
 require("../connect/conn.js");
 
 var admin=require("../schema/Registration/admin.js");
@@ -164,6 +165,6 @@ const hostname = "192.168.224.190"; //192.168.121.190 192.168.224.190
 
 
 
-app.listen("6000",()=>{
+app.listen(PORT,()=>{
       console.log("listing to port no 6000");
 })
