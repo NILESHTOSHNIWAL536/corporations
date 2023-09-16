@@ -8,6 +8,11 @@ var product=require("../schema/product/productItem.js");
 
 app.use(express.json());
 
+app.get("/",async(req,res)=>{
+     res.send("connected success");
+      
+});
+
 
 app.post("/admin",async(req,res)=>{
       console.log("post admin");
