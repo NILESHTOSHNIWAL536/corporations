@@ -14,6 +14,14 @@ app.get("/",async(req,res)=>{
       
 });
 
+app.get("/admin",async(req,res)=>{
+   try{
+          var data=await admin.find();
+         res.send(data);
+   }catch(e){
+        res.send(e);
+   }
+});
 
 app.post("/admin",async(req,res)=>{
       console.log("post admin");
