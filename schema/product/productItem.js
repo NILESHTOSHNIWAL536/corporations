@@ -17,6 +17,13 @@ var product=new mongoose.Schema(
         lorry:String,
         Dateobj:String,
         district:String,
+        phoneNo:String,
+        district:String,
+        transport:String,
+        kiraya:String,
+        advance:String,
+        discount:String,
+        paid:Boolean,
         Bill:[
                {
                    rice:String,
