@@ -18,7 +18,6 @@ var product=new mongoose.Schema(
         Dateobj:String,
         district:String,
         phoneNo:String,
-        district:String,
         transport:String,
         kiraya:String,
         advance:String,
