@@ -10,6 +10,7 @@ var product=new mongoose.Schema(
           date:String,
           transport:String,
           contactno:String,
+          tarik:String,
         }
     ],
       items:[
