@@ -74,7 +74,7 @@ app.get("/admin/:id/:pass",async(req,res)=>{
         var {id}=req.params;
         var {pass}=req.params;
             var getuser=await admin.find({emailadress:id,password:pass});
-             res.status(200).send(getuser);
+             res.status(200).send(getuser[0]);
        }catch(e){
             res.status(400).send("error an able to add data ")
        }
