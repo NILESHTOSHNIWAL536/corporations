@@ -7,7 +7,9 @@ var product=new mongoose.Schema(
         {
           name:String,
           amount:String,
-          Dateobj:String
+          Dateobj:String,
+          transport:String,
+          contactno:String,
         }
     ],
       items:[
