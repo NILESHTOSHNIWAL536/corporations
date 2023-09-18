@@ -62,7 +62,7 @@ app.get("/admin/payment/:userid",async(req,res)=>{
          var {userid}=req.params;
          var data=await product.find({user_id:userid});
          console.log(data[0].payment);
-         res.send(data[0]);
+         res.send(data[0].payment);
     }catch(e){
        console.log("error while getting data => "+e)
 
