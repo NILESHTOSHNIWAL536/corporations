@@ -1,6 +1,6 @@
 var mongoose=require("mongoose");
 
-var product=new mongoose.Schema(
+var product3=new mongoose.Schema(
     {
       user_id:String,
       payment:[
@@ -33,6 +33,39 @@ var product=new mongoose.Schema(
                    rate:Number,
                    Bags:Number,
                 
+               }
+        ],
+      }
+      ]
+    }
+);
+var product=new mongoose.Schema(
+    {
+      user_id:String,
+      payment:[
+        {
+          name:String,
+          amount:String,
+          Dateobj:String
+        }
+    ],
+      items:[
+        {
+        ricemill:String,
+        party:String,
+        lorry:String,
+        Dateobj:String,
+        district:String,
+        TransPort:String,
+        paid:Boolean,
+        discount:Number,
+        Bill:[
+               {
+                   rice:String,
+                   kg:Number,
+                   rate:Number,
+                   Bags:Number,
+                   received:Number,
                }
         ],
       }
