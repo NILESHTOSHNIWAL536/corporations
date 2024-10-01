@@ -14,6 +14,37 @@ app.get("/",async(req,res)=>{
       
 });
 
+
+
+app.patch("/update/:id/:itemId", async (req, res) => {
+    try {
+      const { id, itemId } = req.params; // Extract user_id and itemId from the URL
+  
+      // Find the product with the matching user_id
+      const data = await product.findOne({ user_id: id });
+      if (!data) {
+        return res.status(404).send("User not found");
+      }
+  
+      // Find the item to update within the items array
+      const itemIndex = data.items.findIndex((item) => item._id.toString() === itemId);
+      if (itemIndex === -1) {
+        return res.status(404).send("Item not found");
+      }
+  
+      // Update the item with the new data from req.body
+      data.items[itemIndex] = { ...data.items[itemIndex], ...req.body };
+  
+      // Save the updated product
+      const updatedProduct = await data.save();
+     
+      res.status(200).send(updatedProduct);
+    } catch (e) {
+      console.error(e);
+      res.status(500).send("Error while updating item");
+    }
+  });
+
 app.get("/admin",async(req,res)=>{
    try{
           var data=await admin.find();
